@@ -5,8 +5,8 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.use('/', html)
 app.use('/api', api)
+app.use('/', html)
 // apiRoutes.js example
 // const store = require('./db/store');
 
