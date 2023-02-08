@@ -36,7 +36,7 @@ api.post('/notes', (req, res) => {
             oldNotes.push(newNote)
 
             // write file
-            fs.writeFile('../db/db.json', JSON.stringify(oldNotes), (err) => 
+            fs.writeFile('db/db.json', JSON.stringify(oldNotes), (err) => 
                 err
                     ? console.error(err)
                     : console.info('Successfully updated stored notes')

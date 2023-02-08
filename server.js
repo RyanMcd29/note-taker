@@ -5,14 +5,15 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 app.use('/api', api)
 app.use('/', html)
+
 // apiRoutes.js example
 // const store = require('./db/store');
 
-// app.get('/notes', (req, res) => {
-//     store.getAllNotes().then((notes) => res.json(notes))
-// })
 
 app.listen(PORT, () =>
     console.log(`App now live at, http://localhost:${PORT}`)
