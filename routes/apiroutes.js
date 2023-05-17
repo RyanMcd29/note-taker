@@ -1,5 +1,5 @@
 // const store = require('../db/store');
-const { randomUUID } = require('crypto');
+const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 const app = require('./htmlroutes');
 const api = require('express').Router();
@@ -23,7 +23,7 @@ api.post('/notes', (req, res) => {
         const newNote = {
             title,
             text,
-            id : randomUUID(),
+            id : uuidv4(),
         };
 
         // Obtain existing notes database
